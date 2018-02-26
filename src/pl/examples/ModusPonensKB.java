@@ -18,9 +18,9 @@ public class ModusPonensKB extends KB {
 	
 	public static void main(String[] argv) {
 
-//		BasicModelChecking tt = new BasicModelChecking();
-//		KB kb = new ModusPonensKB();
-//		tt.entails(kb, test);
+		BasicModelChecking tt = new BasicModelChecking();
+		KB kb = new ModusPonensKB();
+		tt.entails(kb, test);
 		new ModusPonensKB().dump();
 	}
 

@@ -26,11 +26,18 @@ public class BasicModelChecking implements Prover {
             Symbol P = symbols.get(0);
             symbols.remove(0);
 
-            PLModel copyModel1 = new PLModel(model);
-            PLModel copyModel2 = new PLModel(model);
+
+            PLModel copyModel1 = model.copy();
+            PLModel copyModel2 = model.copy();
 
             copyModel1.set(P, true);
             copyModel2.set(P, false);
+            copyModel1.dump();
+            copyModel2.dump();
+
+
+
+
             return truthTableCheckAll(kb, alpha, symbols, copyModel1) && truthTableCheckAll(kb, alpha, symbols, copyModel2);
         }
     }

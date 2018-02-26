@@ -1,5 +1,6 @@
 package pl.core;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import pl.cnf.CNFConverter;
 
 import java.util.HashMap;
@@ -12,15 +13,27 @@ public class PLModel implements Model {
         truthTable = new HashMap<>();
     }
 
-    public PLModel(PLModel otherModel){
-        truthTable = otherModel.truthTable;
+    public PLModel(HashMap<Symbol, Boolean> hmap){
+        truthTable = hmap;
     }
+
     /**
      * Set the value assigned to the given PropositionSymbol in this
      * Model to the given boolean VALUE.
      */
     public void set(Symbol sym, boolean value){
         truthTable.put(sym, value);
+    }
+
+    public PLModel copy(){
+        HashMap<Symbol, Boolean> hmap = new HashMap<>();
+        truthTable.forEach((k, v) -> {
+                hmap.put(k, v);
+        }
+        );
+
+        return new PLModel(hmap);
+
     }
 
 
@@ -58,4 +71,6 @@ public class PLModel implements Model {
             }
         );
     }
+
+
 }
