@@ -16,7 +16,7 @@ public class BasicModelChecking implements Prover {
         return truthTableCheckAll(kb, alpha, symbols, );
     }
 
-    public boolean truthTableCheckAll(KB kb, Sentence alpha, ArrayList<Symbol> symbols, Model model){
+    public boolean truthTableCheckAll(KB kb, Sentence alpha, ArrayList<Symbol> symbols, PLModel model){
         if (symbols.isEmpty()){
             if (isPLTrue(kb, model)){
                 return isPLTrue(alpha, model);
@@ -26,7 +26,7 @@ public class BasicModelChecking implements Prover {
         }else{
             Symbol P = symbols.get(0);
             symbols.remove(0);
-            return truthTableCheckAll(kb, alpha, symbols, model.set(P, true));
+            return truthTableCheckAll(kb, alpha, symbols, );
         }
     }
 
