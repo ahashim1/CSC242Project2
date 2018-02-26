@@ -1,9 +1,10 @@
 package pl.core;
 
 import com.sun.org.apache.xpath.internal.operations.Bool;
-import pl.cnf.CNFConverter;
-
+import pl.cnf.*;
+import java.util.*;
 import java.util.HashMap;
+
 
 public class PLModel implements Model {
 
@@ -51,6 +52,12 @@ public class PLModel implements Model {
      */
     public boolean satisfies(KB kb){
 
+        for (Sentence s: kb.sentences){
+            if (!s.isSatisfiedBy(this)){
+                return false;
+            }
+        }
+
         return true;
     }
 
@@ -58,8 +65,8 @@ public class PLModel implements Model {
      * Return true if this Model satisfies (makes true) the given Sentence.
      */
     public boolean satisfies(Sentence sentence){
-        CNFConverter.convert(sentence);
-        return true;
+
+        return sentence.isSatisfiedBy(this);
     }
 
     /**

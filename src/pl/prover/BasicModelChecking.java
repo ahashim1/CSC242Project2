@@ -32,11 +32,6 @@ public class BasicModelChecking implements Prover {
 
             copyModel1.set(P, true);
             copyModel2.set(P, false);
-            copyModel1.dump();
-            copyModel2.dump();
-
-
-
 
             return truthTableCheckAll(kb, alpha, symbols, copyModel1) && truthTableCheckAll(kb, alpha, symbols, copyModel2);
         }
