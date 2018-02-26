@@ -8,6 +8,7 @@ public class ModusPonensKB extends KB {
 	static Symbol test;
 	public ModusPonensKB() {
 		super();
+
 		Symbol p = intern("P");
 		Symbol q = intern("Q");
 		add(p);
@@ -16,9 +17,10 @@ public class ModusPonensKB extends KB {
 	}
 	
 	public static void main(String[] argv) {
-		BasicModelChecking tt = new BasicModelChecking();
-		KB kb = new ModusPonensKB();
-		tt.entails(kb, test);
+
+//		BasicModelChecking tt = new BasicModelChecking();
+//		KB kb = new ModusPonensKB();
+//		tt.entails(kb, test);
 		new ModusPonensKB().dump();
 	}
 

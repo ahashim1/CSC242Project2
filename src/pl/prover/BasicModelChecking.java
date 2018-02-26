@@ -11,9 +11,8 @@ public class BasicModelChecking implements Prover {
     public boolean entails(KB kb, Sentence alpha){
 
         ArrayList<Symbol> symbols = new ArrayList(kb.symbols());
-
-
-        return truthTableCheckAll(kb, alpha, symbols, );
+        PLModel model = new PLModel();
+        return truthTableCheckAll(kb, alpha, symbols, model);
     }
 
     public boolean truthTableCheckAll(KB kb, Sentence alpha, ArrayList<Symbol> symbols, PLModel model){
@@ -26,7 +25,13 @@ public class BasicModelChecking implements Prover {
         }else{
             Symbol P = symbols.get(0);
             symbols.remove(0);
-            return truthTableCheckAll(kb, alpha, symbols, );
+
+            PLModel copyModel1 = new PLModel(model);
+            PLModel copyModel2 = new PLModel(model);
+
+            copyModel1.set(P, true);
+            copyModel2.set(P, false);
+            return truthTableCheckAll(kb, alpha, symbols, copyModel1) && truthTableCheckAll(kb, alpha, symbols, copyModel2);
         }
     }
 
