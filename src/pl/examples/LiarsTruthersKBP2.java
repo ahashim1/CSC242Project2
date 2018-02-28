@@ -4,19 +4,19 @@ package pl.examples;
 import pl.core.*;
 import pl.prover.BasicModelChecking;
 
-public class LiarsTruthersKB extends KB {
+public class LiarsTruthersKBP2 extends KB {
 
-    private LiarsTruthersKB() {
+    private LiarsTruthersKBP2() {
         Symbol amy = intern("Amy is a truther.");
         Symbol bob = intern("Bob is a truther.");
         Symbol cal = intern("Cal is a truther.");
 
-        add(new Biconditional(amy, new Conjunction(amy, cal)));
-        add(new Biconditional(bob, new Negation(cal)));
-        add(new Biconditional(cal, new Disjunction(new Negation(amy), bob)));
+        add(new Biconditional(amy, new Negation(cal)));
+        add(new Biconditional(bob, new Conjunction(amy, cal)));
+        add(new Biconditional(cal, new Conjunction(amy, cal)));
     }
 
-    private static void checkLiarsTruthers(LiarsTruthersKB kb) {
+    private static void checkLiarsTruthers(LiarsTruthersKBP2 kb) {
 
         BasicModelChecking bmc = new BasicModelChecking();
 
@@ -50,7 +50,7 @@ public class LiarsTruthersKB extends KB {
     }
 
     public static void main(String[] args) {
-        LiarsTruthersKB kb = new LiarsTruthersKB();
+        LiarsTruthersKBP2 kb = new LiarsTruthersKBP2();
         checkLiarsTruthers(kb);
     }
 }
