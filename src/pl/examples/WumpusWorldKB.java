@@ -1,10 +1,8 @@
 package pl.examples;
 
-import pl.core.Biconditional;
-import pl.core.Disjunction;
-import pl.core.KB;
-import pl.core.Negation;
-import pl.core.Symbol;
+import pl.core.*;
+import pl.prover.BasicModelChecking;
+import sun.jvm.hotspot.debugger.cdbg.Sym;
 
 public class WumpusWorldKB extends KB {
 	
@@ -26,7 +24,19 @@ public class WumpusWorldKB extends KB {
 	}
 
 	public static void main(String[] argv) {
-		new WumpusWorldKB().dump();
+		WumpusWorldKB kb = new WumpusWorldKB();
+
+		Symbol p12 = kb.intern("P1,4");
+
+		Sentence s = p12;
+
+		BasicModelChecking bmc = new BasicModelChecking();
+
+		if (bmc.entails(kb, s)){
+			System.out.println("test");
+		}else{
+			System.out.println("test2");
+		}
 	}
 
 }

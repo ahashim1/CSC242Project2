@@ -5,7 +5,6 @@ import pl.prover.BasicModelChecking;
 
 public class ModusPonensKB extends KB {
 
-	static Symbol test;
 	public ModusPonensKB() {
 		super();
 
@@ -13,15 +12,23 @@ public class ModusPonensKB extends KB {
 		Symbol q = intern("Q");
 		add(p);
 		add(new Implication(p, q));
-		test = p;
 	}
 	
 	public static void main(String[] argv) {
 
-		BasicModelChecking tt = new BasicModelChecking();
-		KB kb = new ModusPonensKB();
-		tt.entails(kb, test);
-		new ModusPonensKB().dump();
+		ModusPonensKB kb = new ModusPonensKB();
+		Symbol q = kb.intern("Q");
+		Sentence s = q;
+
+		BasicModelChecking bmc = new BasicModelChecking();
+		if (bmc.entails(kb, s)){
+			System.out.println("Modus Ponens Maintains Entailment");
+		}else{
+			System.out.println("Modus Ponens Maintains Entailment");
+		}
+
+//		new ModusPonensKB().dump();
+
 	}
 
 }
