@@ -2,7 +2,6 @@ package pl.examples;
 
 import pl.core.*;
 import pl.prover.BasicModelChecking;
-import sun.jvm.hotspot.debugger.cdbg.Sym;
 
 public class WumpusWorldKB extends KB {
 	
@@ -23,7 +22,7 @@ public class WumpusWorldKB extends KB {
 		add(b21);
 	}
 
-	public static void main(String[] argv) {
+	public static void main(String[] args) {
 		WumpusWorldKB kb = new WumpusWorldKB();
 
 		Symbol p12 = kb.intern("P1,2");
