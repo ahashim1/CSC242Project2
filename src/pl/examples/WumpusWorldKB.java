@@ -26,16 +26,16 @@ public class WumpusWorldKB extends KB {
 	public static void main(String[] argv) {
 		WumpusWorldKB kb = new WumpusWorldKB();
 
-		Symbol p12 = kb.intern("P1,4");
+		Symbol p12 = kb.intern("P1,2");
 
 		Sentence s = p12;
 
 		BasicModelChecking bmc = new BasicModelChecking();
 
 		if (bmc.entails(kb, s)){
-			System.out.println("test");
+			System.out.println("There is a pit at location 1, 2");
 		}else{
-			System.out.println("test2");
+			System.out.println("There is not a pit at location 1, 2");
 		}
 	}
 
