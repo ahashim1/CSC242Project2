@@ -1,6 +1,5 @@
 package pl.examples;
 
-
 import pl.core.*;
 import pl.prover.BasicModelChecking;
 import pl.prover.WalkSAT;
@@ -8,46 +7,41 @@ import pl.prover.WalkSAT;
 public class LiarsTruthersKBP2 extends KB {
 
     private LiarsTruthersKBP2() {
-        Symbol amy = intern("Amy is a truther.");
-        Symbol bob = intern("Bob is a truther.");
-        Symbol cal = intern("Cal is a truther.");
+        Symbol amy = intern("Amy");
+        Symbol bob = intern("Bob");
+        Symbol cal = intern("Cal");
 
         add(new Biconditional(amy, new Negation(cal)));
         add(new Biconditional(bob, new Conjunction(amy, cal)));
         add(new Biconditional(cal, new Conjunction(amy, cal)));
     }
 
+    private static void checkBMC(LiarsTruthersKBP2 kb, Symbol toCheck,
+                                 BasicModelChecking bmc) {
+        //  Does the checking for each symbol
+        if (bmc.entails(kb, toCheck)) {
+            System.out.println(toCheck.toString() + " is a truther.");
+        } else if (bmc.entails(kb, new Negation(toCheck))) {
+            System.out.println(toCheck.toString() + " is a liar.");
+        } else {
+            System.out.println("We do not know whether " + toCheck.toString()
+                    + " is a liar or truther.");
+        }
+    }
+
     private static void checkLiarsTruthers(LiarsTruthersKBP2 kb) {
 
         BasicModelChecking bmc = new BasicModelChecking();
 
-        Symbol amy = kb.intern("Amy is a truther.");
-        if (bmc.entails(kb, amy)) {
-            System.out.println("Amy is a truther.");
-        } else if (bmc.entails(kb, new Negation(amy))) {
-            System.out.println("Amy is a liar.");
-        } else {
-            System.out.println("We do not know if Amy is a liar or truther.");
-        }
+        //  Test everything
+        Symbol amy = kb.intern("Amy");
+        checkBMC(kb, amy, bmc);
 
-        Symbol bob = kb.intern("Bob is a truther.");
-        if (bmc.entails(kb, bob)) {
-            System.out.println("Bob is a truther.");
-        } else if (bmc.entails(kb, new Negation(bob))) {
-            System.out.println("Bob is a liar.");
-        } else {
-            System.out.println("We do not know if Bob is a liar or truther.");
-        }
+        Symbol bob = kb.intern("Bob");
+        checkBMC(kb, bob, bmc);
 
-        Symbol cal = kb.intern("Cal is a truther.");
-        if (bmc.entails(kb, cal)) {
-            System.out.println("Cal is a truther.");
-        } else if (bmc.entails(kb, new Negation(cal))) {
-            System.out.println("Cal is a liar.");
-        } else {
-            System.out.println("We do not know if Cal is a liar or truther.");
-        }
-
+        Symbol cal = kb.intern("Cal");
+        checkBMC(kb, cal, bmc);
     }
 
 
@@ -55,9 +49,9 @@ public class LiarsTruthersKBP2 extends KB {
 
         LiarsTruthersKBP2 kb = new LiarsTruthersKBP2();
         WalkSAT wSAT = new WalkSAT();
-        Symbol amy = kb.intern("Amy is a truther.");
-        Symbol bob = kb.intern("Bob is a truther.");
-        Symbol cal = kb.intern("Cal is a truther.");
+        Symbol amy = kb.intern("Amy");
+        Symbol bob = kb.intern("Bob");
+        Symbol cal = kb.intern("Cal");
 
         // Test amy truther
         kb = new LiarsTruthersKBP2();

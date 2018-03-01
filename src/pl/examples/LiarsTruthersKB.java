@@ -1,6 +1,5 @@
 package pl.examples;
 
-
 import pl.core.*;
 import pl.prover.BasicModelChecking;
 import pl.prover.WalkSAT;
@@ -9,9 +8,9 @@ public class LiarsTruthersKB extends KB {
 
     private LiarsTruthersKB() {
         //  Create the symbols
-        Symbol amy = intern("Amy is a truther.");
-        Symbol bob = intern("Bob is a truther.");
-        Symbol cal = intern("Cal is a truther.");
+        Symbol amy = intern("Amy");
+        Symbol bob = intern("Bob");
+        Symbol cal = intern("Cal");
 
         //  Set up the conditions
         add(new Biconditional(amy, new Conjunction(amy, cal)));
@@ -19,141 +18,85 @@ public class LiarsTruthersKB extends KB {
         add(new Biconditional(cal, new Disjunction(new Negation(amy), bob)));
     }
 
+    private static void checkBMC(LiarsTruthersKB kb, Symbol toCheck,
+                                 BasicModelChecking bmc) {
+        //  Does the checking for each symbol
+        if (bmc.entails(kb, toCheck)) {
+            System.out.println(toCheck.toString() + " is a truther.");
+        } else if (bmc.entails(kb, new Negation(toCheck))) {
+            System.out.println(toCheck.toString() + " is a liar.");
+        } else {
+            System.out.println("We do not know whether " + toCheck.toString()
+                    + " is a liar or truther.");
+        }
+    }
+
     private static void checkLiarsTruthers(LiarsTruthersKB kb) {
 
         BasicModelChecking bmc = new BasicModelChecking();
 
         //  Test everything
-        Symbol amy = kb.intern("Amy is a truther.");
-        if (bmc.entails(kb, amy)) {
-            System.out.println("Amy is a truther.");
-        } else if (bmc.entails(kb, new Negation(amy))) {
-            System.out.println("Amy is a liar.");
+        Symbol amy = kb.intern("Amy");
+        checkBMC(kb, amy, bmc);
+
+        Symbol bob = kb.intern("Bob");
+        checkBMC(kb, bob, bmc);
+
+        Symbol cal = kb.intern("Cal");
+        checkBMC(kb, cal, bmc);
+    }
+
+    private static void solveLTSymbol(Symbol toCheck, WalkSAT wSAT) {
+        LiarsTruthersKB kb = new LiarsTruthersKB();
+        kb.add(toCheck);
+        Model model = wSAT.solve(kb);
+
+        //  Check if solution for truther exists
+        if (model != null) {
+            System.out.println("Found solution where " + toCheck.toString() +
+                    " is a truther: ");
+            model.dump();
         } else {
-            System.out.println("We do not know if Amy is a liar or truther.");
+            System.out.println("Greater than max_flips, could not find " +
+                    "solution where " + toCheck.toString() + " is a truther");
         }
 
-        Symbol bob = kb.intern("Bob is a truther.");
-        if (bmc.entails(kb, bob)) {
-            System.out.println("Bob is a truther.");
-        } else if (bmc.entails(kb, new Negation(bob))) {
-            System.out.println("Bob is a liar.");
+        //  Check if solution for liar exists
+        kb = new LiarsTruthersKB();
+        kb.add(new Negation(toCheck));
+        model = wSAT.solve(kb);
+        if (model != null) {
+            System.out.println("Found solution where " + toCheck.toString() +
+                    " is a liar: ");
+            model.dump();
         } else {
-            System.out.println("We do not know if Bob is a liar or truther.");
+            System.out.println("Greater than max_flips, could not find " +
+                    "solution where " + toCheck.toString() + " is a liar.");
         }
-
-        Symbol cal = kb.intern("Cal is a truther.");
-        if (bmc.entails(kb, cal)) {
-            System.out.println("Cal is a truther.");
-        } else if (bmc.entails(kb, new Negation(cal))) {
-            System.out.println("Cal is a liar.");
-        } else {
-            System.out.println("We do not know if Cal is a liar or truther.");
-        }
-
-
-
-
-        WalkSAT wSAT = new WalkSAT();
-
-
-
-
-
     }
 
     private static void solveLiarsTruthers(){
 
         LiarsTruthersKB kb = new LiarsTruthersKB();
         WalkSAT wSAT = new WalkSAT();
-        Symbol amy = kb.intern("Amy is a truther.");
-        Symbol bob = kb.intern("Bob is a truther.");
-        Symbol cal = kb.intern("Cal is a truther.");
+        Symbol amy = kb.intern("Amy");
+        Symbol bob = kb.intern("Bob");
+        Symbol cal = kb.intern("Cal");
 
-        // Test amy truther
-        kb = new LiarsTruthersKB();
-        kb.add(amy);
-        Model model = wSAT.solve(kb);
-        if (model != null){
-            System.out.println("Found a solution where Amy is a truther: ");
+        solveLTSymbol(amy, wSAT);
 
-            model.dump();
-        }else{
+        solveLTSymbol(bob, wSAT);
 
-            System.out.println("Greater than max_flips, could not find solution where the amy is a truther");
-        }
-
-        // test amy liar
-        kb = new LiarsTruthersKB();
-        kb.add(new Negation(amy));
-        model = wSAT.solve(kb);
-        if (model != null){
-            System.out.println("Found a solution where Amy is a liar: ");
-
-            model.dump();
-        }else{
-
-            System.out.println("Greater than max_flips, could not find solution where the amy is a liar");
-        }
-
-
-        // Test bob truther
-        kb = new LiarsTruthersKB();
-        kb.add(bob);
-        model = wSAT.solve(kb);
-        if (model != null){
-            System.out.println("Found a solution where Bob is a truther: ");
-
-            model.dump();
-        }else{
-
-            System.out.println("Greater than max_flips, could not find solution where the Bob is a truther");
-        }
-
-        // test bob liar
-        kb = new LiarsTruthersKB();
-        kb.add(new Negation(bob));
-        model = wSAT.solve(kb);
-        if (model != null){
-            System.out.println("Found a solution where Bob is a liar: ");
-
-            model.dump();
-        }else{
-
-            System.out.println("Greater than max_flips, could not find solution where the Bob is a liar");
-        }
-
-
-        // Test cal truther
-        kb = new LiarsTruthersKB();
-        kb.add(cal);
-        model = wSAT.solve(kb);
-        if (model != null){
-            System.out.println("Found a solution where Cal is a truther: ");
-
-            model.dump();
-        }else{
-
-            System.out.println("Greater than max_flips, could not find solution where the Cal is a truther");
-        }
-
-        // test cal liar
-        kb = new LiarsTruthersKB();
-        kb.add(new Negation(cal));
-        model = wSAT.solve(kb);
-        if (model != null){
-            System.out.println("Found a solution where Cal is a liar: ");
-
-            model.dump();
-        }else{
-
-            System.out.println("Greater than max_flips, could not find solution where the Cal is a liar");
-        }
+        solveLTSymbol(cal, wSAT);
     }
 
     public static void main(String[] args) {
         LiarsTruthersKB kb = new LiarsTruthersKB();
+
+        //  Checking using basic model checking
         checkLiarsTruthers(kb);
+
+        //  Check using walkSAT
         solveLiarsTruthers();
     }
 }
