@@ -74,13 +74,25 @@ public class Clause extends ArraySet<Literal> {
      * Return true if this Clause is satisfied by the given Model.
      * That is, if each of its Literals is satisfied by the Model.
      */
+//	public boolean isSatisfiedBy(Model model) {
+//		for (Literal literal : this) {
+//			if (!literal.isSatisfiedBy(model)) {
+//				return false;
+//			}
+//		}
+//		return true;
+//	}
+
+
+    // changed from Ferguson's implementation
+    // A clause is satisfied if any of its Literals is satisfied by the model
 	public boolean isSatisfiedBy(Model model) {
 		for (Literal literal : this) {
-			if (!literal.isSatisfiedBy(model)) {
-				return false;
+			if (literal.isSatisfiedBy(model)) {
+				return true;
 			}
 		}
-		return true;
+		return false;
 	}
 
 }

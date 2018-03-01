@@ -2,6 +2,7 @@ package pl.examples;
 
 import pl.core.*;
 import pl.prover.BasicModelChecking;
+import pl.prover.WalkSAT;
 
 public class ModusPonensKB extends KB {
 
@@ -17,15 +18,30 @@ public class ModusPonensKB extends KB {
 	public static void main(String[] argv) {
 
 		ModusPonensKB kb = new ModusPonensKB();
-		Symbol q = kb.intern("Q");
-		Sentence s = q;
+//		Sentence s = kb.intern("Q");
 
-		BasicModelChecking bmc = new BasicModelChecking();
-		if (bmc.entails(kb, s)){
-			System.out.println("Modus Ponens Maintains Entailment");
+
+//		kb.add(s);
+
+
+		WalkSAT wSAT = new WalkSAT();
+		Model model = wSAT.solve(kb);
+		if (model != null){
+			System.out.println("Found a solution: ");
+			model.dump();
 		}else{
-			System.out.println("Modus Ponens Maintains Entailment");
+			System.out.println("Greater than max_flips");
 		}
+
+//		BasicModelChecking bmc = new BasicModelChecking();
+//
+//		if (bmc.entails(kb, s)){
+//
+//			System.out.println("Modus Ponens Maintains Entailment");
+//		}else{
+//			System.out.println("Modus Ponens Maintains Entailment");
+//		}
+
 
 //		new ModusPonensKB().dump();
 
