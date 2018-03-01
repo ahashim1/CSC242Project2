@@ -7,10 +7,12 @@ import pl.prover.BasicModelChecking;
 public class LiarsTruthersKB extends KB {
 
     private LiarsTruthersKB() {
+        //  Create the symbols
         Symbol amy = intern("Amy is a truther.");
         Symbol bob = intern("Bob is a truther.");
         Symbol cal = intern("Cal is a truther.");
 
+        //  Set up the conditions
         add(new Biconditional(amy, new Conjunction(amy, cal)));
         add(new Biconditional(bob, new Negation(cal)));
         add(new Biconditional(cal, new Disjunction(new Negation(amy), bob)));
@@ -20,6 +22,7 @@ public class LiarsTruthersKB extends KB {
 
         BasicModelChecking bmc = new BasicModelChecking();
 
+        //  Test everything
         Symbol amy = kb.intern("Amy is a truther.");
         if (bmc.entails(kb, amy)) {
             System.out.println("Amy is a truther.");
