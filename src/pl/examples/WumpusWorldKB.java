@@ -2,7 +2,6 @@ package pl.examples;
 
 import pl.core.*;
 import pl.prover.BasicModelChecking;
-import pl.prover.WalkSAT;
 
 public class WumpusWorldKB extends KB {
 	
@@ -37,10 +36,6 @@ public class WumpusWorldKB extends KB {
 		}else{
 			System.out.println("There is not a pit at location 1, 2");
 		}
-
-		WalkSAT wSAT = new WalkSAT();
-
-		wSAT.solve(kb).dump();
 	}
 
 }
