@@ -1,7 +1,9 @@
 package pl.examples;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import pl.core.*;
 import pl.prover.BasicModelChecking;
+import pl.prover.WalkSAT;
 
 public class WumpusWorldKB extends KB {
 	
@@ -32,10 +34,24 @@ public class WumpusWorldKB extends KB {
 		BasicModelChecking bmc = new BasicModelChecking();
 
 		if (bmc.entails(kb, s)){
-			System.out.println("There is a pit at location 1, 2");
+			System.out.println("It is proven that there is a pit at location 1, 2");
 		}else{
-			System.out.println("There is not a pit at location 1, 2");
+			System.out.println("Cannot prove that there is a pit at location 1, 2");
 		}
+
+		kb.add(new Symbol("P1,2"));
+		WalkSAT wSAT = new WalkSAT();
+		Model model = wSAT.solve(kb);
+		if (model != null){
+			System.out.println("Found a solution where there is a pit at 1, 2: ");
+
+			model.dump();
+		}else{
+
+			System.out.println("Greater than max_flips, could not determine if there is a pit in 1,2 or not");
+		}
+
+
 	}
 
 }

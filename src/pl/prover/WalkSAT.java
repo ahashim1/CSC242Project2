@@ -16,7 +16,7 @@ public class WalkSAT implements Solver {
         Set<Clause> clauses = CNFConverter.convert(kb);
 
 
-        return walkSAT(clauses, 0.5, 1000);
+        return walkSAT(clauses, 0.5, 100000);
     }
 
 
@@ -119,8 +119,12 @@ public class WalkSAT implements Solver {
     }
 
     private boolean areClausesSatisfied(PLModel model, Set<Clause> clauses){
-        for (Clause clause: clauses){
 
+        for (Clause clause: clauses){
+//            model.dump();
+//            System.out.println(clause.toString());
+//            System.out.println(clause.isSatisfiedBy(model));
+//            System.out.println("*******");
             if (!clause.isSatisfiedBy(model)){
 
                 return false;
