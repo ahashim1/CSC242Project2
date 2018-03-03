@@ -28,7 +28,7 @@ public class HornClausesKB extends KB {
 
 
 //         mythical
-
+        System.out.println("Basic Model Checking Result:");
         Symbol mythical = kb.intern("Mythical");
         s = mythical;
         BasicModelChecking bmc = new BasicModelChecking();
@@ -58,12 +58,14 @@ public class HornClausesKB extends KB {
         }
 
 
+        System.out.println();
+        System.out.println("WalkSAT Algorithm Result:");
         WalkSAT wSAT = new WalkSAT();
         kb.add(mythical);
 
         Model model = wSAT.solve(kb);
         if (model != null){
-            System.out.println("The unicorn can be mythical in the following case:");
+            System.out.println("The unicorn can be mythical in the following model:");
 
             model.dump();
         }else{

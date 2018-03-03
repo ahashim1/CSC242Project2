@@ -21,7 +21,7 @@ public class ModusPonensKB extends KB {
 		Sentence s = kb.intern("Q");
 
 		BasicModelChecking bmc = new BasicModelChecking();
-
+		System.out.println("Basic Model Checking Result:");
 		if (bmc.entails(kb, s)){
 
 			System.out.println("Modus Ponens Maintains Entailment");
@@ -29,10 +29,9 @@ public class ModusPonensKB extends KB {
 			System.out.println("Modus Ponens Does Not Maintain Entailment");
 		}
 
+		System.out.println();
+		System.out.println("WalkSAT Algorithm Result:");
 
-
-
-		kb.add(s);
 		WalkSAT wSAT = new WalkSAT();
 		Model model = wSAT.solve(kb);
 		if (model != null){

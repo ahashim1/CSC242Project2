@@ -1,6 +1,5 @@
 package pl.examples;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import pl.core.*;
 import pl.prover.BasicModelChecking;
 import pl.prover.WalkSAT;
@@ -32,13 +31,15 @@ public class WumpusWorldKB extends KB {
 		Sentence s = p12;
 
 		BasicModelChecking bmc = new BasicModelChecking();
-
+		System.out.println("Basic Model Checking Result:");
 		if (bmc.entails(kb, s)){
 			System.out.println("It is proven that there is a pit at location 1, 2");
 		}else{
 			System.out.println("Cannot prove that there is a pit at location 1, 2");
 		}
 
+		System.out.println();
+		System.out.println("WalkSAT Algorithm Result:");
 		kb.add(new Symbol("P1,2"));
 		WalkSAT wSAT = new WalkSAT();
 		Model model = wSAT.solve(kb);

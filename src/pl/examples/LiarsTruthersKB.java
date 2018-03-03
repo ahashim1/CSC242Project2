@@ -6,7 +6,7 @@ import pl.prover.WalkSAT;
 
 public class LiarsTruthersKB extends KB {
 
-    private LiarsTruthersKB() {
+    public LiarsTruthersKB() {
         //  Create the symbols
         Symbol amy = intern("Amy");
         Symbol bob = intern("Bob");
@@ -93,9 +93,12 @@ public class LiarsTruthersKB extends KB {
     public static void main(String[] args) {
         LiarsTruthersKB kb = new LiarsTruthersKB();
 
+        System.out.println("Basic Model Checking Result:");
         //  Checking using basic model checking
         checkLiarsTruthers(kb);
 
+        System.out.println();
+        System.out.println("WalkSAT Algorithm Result:");
         //  Check using walkSAT
         solveLiarsTruthers();
     }

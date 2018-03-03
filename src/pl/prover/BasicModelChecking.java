@@ -12,10 +12,10 @@ public class BasicModelChecking implements Prover {
 
     public boolean entails(KB kb, Sentence alpha){
 
-        ArrayList<Symbol> symbols = new ArrayList(kb.symbols());
+        ArrayList<Symbol> symbols = new ArrayList<Symbol>(kb.symbols());
 
         // Remove Duplicates
-        Set<Symbol> hs = new HashSet<>();
+        Set<Symbol> hs = new HashSet<Symbol>();
         hs.addAll(symbols);
         symbols.clear();
         symbols.addAll(hs);
@@ -34,7 +34,7 @@ public class BasicModelChecking implements Prover {
         }else{
 
             Symbol P = symbols.get(0);
-            symbols = new ArrayList<>(symbols.subList(1, symbols.size()));
+            symbols = new ArrayList<Symbol>(symbols.subList(1, symbols.size()));
 
 
             PLModel copyModel1 = model.copy();

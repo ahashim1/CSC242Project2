@@ -1,8 +1,5 @@
 package pl.core;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
-import pl.cnf.*;
-import java.util.*;
 import java.util.HashMap;
 
 
