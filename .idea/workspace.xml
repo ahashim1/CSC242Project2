@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a420f280-8679-424f-a86c-076f52d84ae3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project2/pl/core/PLModel.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project2/pl/core/PLModel.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project2/pl/driver/Driver.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project2/pl/driver/Driver.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project2/pl/examples/HornClausesKB.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project2/pl/examples/HornClausesKB.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project2/pl/examples/LiarsTruthersKB.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project2/pl/examples/LiarsTruthersKB.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project2/pl/examples/MoreLiarsTruthersKB.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project2/pl/examples/MoreLiarsTruthersKB.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CSC242Project2/pl/examples/WumpusWorldKB.class" afterPath="$PROJECT_DIR$/out/production/CSC242Project2/pl/examples/WumpusWorldKB.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/README.txt" afterPath="$PROJECT_DIR$/src/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pl/core/PLModel.java" afterPath="$PROJECT_DIR$/src/pl/core/PLModel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pl/driver/Driver.java" afterPath="$PROJECT_DIR$/src/pl/driver/Driver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pl/examples/HornClausesKB.java" afterPath="$PROJECT_DIR$/src/pl/examples/HornClausesKB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pl/examples/LiarsTruthersKB.java" afterPath="$PROJECT_DIR$/src/pl/examples/LiarsTruthersKB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pl/examples/MoreLiarsTruthersKB.java" afterPath="$PROJECT_DIR$/src/pl/examples/MoreLiarsTruthersKB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pl/examples/WumpusWorldKB.java" afterPath="$PROJECT_DIR$/src/pl/examples/WumpusWorldKB.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pl/prover/BasicModelChecking.java" afterPath="$PROJECT_DIR$/src/pl/prover/BasicModelChecking.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pl/prover/WalkSAT.java" afterPath="$PROJECT_DIR$/src/pl/prover/WalkSAT.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,11 +29,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WalkSAT.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pl/prover/WalkSAT.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="138" column="47" lean-forward="false" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Driver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pl/driver/Driver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="492">
-              <caret line="38" column="24" lean-forward="false" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+            <state relative-caret-position="375">
+              <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PLModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pl/core/PLModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="277">
+              <caret line="61" column="79" lean-forward="false" selection-start-line="61" selection-start-column="79" selection-end-line="61" selection-end-column="79" />
+              <folding>
+                <element signature="e#215#216#0" expanded="true" />
+                <element signature="e#259#260#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BasicModelChecking.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pl/prover/BasicModelChecking.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -54,20 +103,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pl/prover/WalkSAT.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Driver.java" />
         <option value="$PROJECT_DIR$/src/Driver/Driver.java" />
         <option value="$PROJECT_DIR$/src/pl/Driver/Driver.java" />
         <option value="$PROJECT_DIR$/src/pl/examples/ModusPonensKB.java" />
-        <option value="$PROJECT_DIR$/src/pl/examples/LiarsTruthersKB.java" />
         <option value="$PROJECT_DIR$/src/pl/examples/LiarsTruthersKBP2.java" />
-        <option value="$PROJECT_DIR$/src/pl/examples/MoreLiarsTruthersKB.java" />
-        <option value="$PROJECT_DIR$/src/pl/examples/HornClausesKB.java" />
-        <option value="$PROJECT_DIR$/src/pl/core/PLModel.java" />
         <option value="$PROJECT_DIR$/src/pl/examples/WumpusWorldKB.java" />
-        <option value="$PROJECT_DIR$/src/pl/prover/BasicModelChecking.java" />
+        <option value="$PROJECT_DIR$/src/pl/examples/LiarsTruthersKB.java" />
+        <option value="$PROJECT_DIR$/src/pl/examples/HornClausesKB.java" />
+        <option value="$PROJECT_DIR$/src/pl/examples/MoreLiarsTruthersKB.java" />
         <option value="$PROJECT_DIR$/src/pl/driver/Driver.java" />
+        <option value="$PROJECT_DIR$/src/pl/core/PLModel.java" />
+        <option value="$PROJECT_DIR$/src/pl/prover/BasicModelChecking.java" />
+        <option value="$PROJECT_DIR$/src/pl/prover/WalkSAT.java" />
       </list>
     </option>
   </component>
@@ -77,11 +126,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-960" />
-    <option name="y" value="-258" />
-    <option name="width" value="960" />
-    <option name="height" value="1058" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="22" />
+    <option name="width" value="1280" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -476,15 +524,15 @@
       <workItem from="1519673211889" duration="11715000" />
       <workItem from="1519703081142" duration="796000" />
       <workItem from="1519764100999" duration="12325000" />
-      <workItem from="1520040420113" duration="4988000" />
+      <workItem from="1520040420113" duration="7754000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30822000" />
+    <option name="totallyTimeSpent" value="33588000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-960" y="-258" width="960" height="1058" extended-state="0" />
+    <frame x="0" y="22" width="1280" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -496,11 +544,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25760648" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22021116" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39583334" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -829,7 +877,7 @@
         <state relative-caret-position="184">
           <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -841,26 +889,6 @@
           <folding>
             <element signature="imports" expanded="true" />
             <marker date="1520052064043" expanded="true" signature="2934:2940" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/examples/MoreLiarsTruthersKB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="174" column="56" lean-forward="false" selection-start-line="174" selection-start-column="56" selection-end-line="174" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/examples/LiarsTruthersKB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="99" column="29" lean-forward="true" selection-start-line="99" selection-start-column="29" selection-end-line="99" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -881,59 +909,80 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/examples/HornClausesKB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="67" column="82" lean-forward="false" selection-start-line="67" selection-start-column="82" selection-end-line="67" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/prover/WalkSAT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="16" lean-forward="false" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/core/PLModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="11" column="5" lean-forward="false" selection-start-line="11" selection-start-column="5" selection-end-line="11" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pl/examples/WumpusWorldKB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="81">
+          <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pl/prover/BasicModelChecking.java">
+    <entry file="file://$PROJECT_DIR$/src/pl/examples/LiarsTruthersKB.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        <state relative-caret-position="140">
+          <caret line="88" column="8" lean-forward="false" selection-start-line="88" selection-start-column="8" selection-end-line="88" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#272#280#0" expanded="true" />
-            <element signature="e#362#370#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/examples/HornClausesKB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="64" column="37" lean-forward="false" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/examples/MoreLiarsTruthersKB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="166" column="31" lean-forward="false" selection-start-line="166" selection-start-column="31" selection-end-line="166" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pl/driver/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="38" column="24" lean-forward="false" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+        <state relative-caret-position="375">
+          <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/core/PLModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="61" column="79" lean-forward="false" selection-start-line="61" selection-start-column="79" selection-end-line="61" selection-end-column="79" />
+          <folding>
+            <element signature="e#215#216#0" expanded="true" />
+            <element signature="e#259#260#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/prover/BasicModelChecking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="52" column="5" lean-forward="false" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pl/prover/WalkSAT.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="138" column="47" lean-forward="false" selection-start-line="138" selection-start-column="47" selection-end-line="138" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

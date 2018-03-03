@@ -77,6 +77,7 @@ public class LiarsTruthersKB extends KB {
 
     private static void solveLiarsTruthers(){
 
+        // WalkSAT results
         LiarsTruthersKB kb = new LiarsTruthersKB();
         WalkSAT wSAT = new WalkSAT();
         Symbol amy = kb.intern("Amy");
@@ -84,9 +85,7 @@ public class LiarsTruthersKB extends KB {
         Symbol cal = kb.intern("Cal");
 
         solveLTSymbol(amy, wSAT);
-
         solveLTSymbol(bob, wSAT);
-
         solveLTSymbol(cal, wSAT);
     }
 

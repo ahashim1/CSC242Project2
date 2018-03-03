@@ -6,12 +6,15 @@ import pl.prover.*;
 public class HornClausesKB extends KB {
 
     public HornClausesKB() {
+        // Initializing symbols used
         Symbol mythical = intern("Mythical");
         Symbol immortal = intern("Immortal");
         Symbol mammal = intern("Mammal");
         Symbol horned = intern("Horned");
         Symbol magical = intern("Magical");
 
+
+        // Add to knowledge base
         // if mythical then immortal
         add(new Implication(mythical, immortal));
         // if not mythical then mortal and mammal
@@ -27,6 +30,7 @@ public class HornClausesKB extends KB {
         Sentence s;
 
 
+        // Basic Model Checking results
 //         mythical
         System.out.println("Basic Model Checking Result:");
         Symbol mythical = kb.intern("Mythical");
@@ -58,6 +62,7 @@ public class HornClausesKB extends KB {
         }
 
 
+        // WalkSAT algorithm results:
         System.out.println();
         System.out.println("WalkSAT Algorithm Result:");
         WalkSAT wSAT = new WalkSAT();

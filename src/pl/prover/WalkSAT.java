@@ -13,25 +13,34 @@ public class WalkSAT implements Solver {
 
     Random rand = new Random();
     public Model solve(KB kb){
+
+        // Converts kb to clauses
         Set<Clause> clauses = CNFConverter.convert(kb);
 
-
+        // Sets p to 0.5 and max_flips to 100000 for WalkSAT
         return walkSAT(clauses, 0.5, 100000);
     }
 
-
+    // WalkSAT algorithm
     private Model walkSAT(Set<Clause> clauses, double p, int max_flips){
 
+//        assigns a random model from clauses
         PLModel model = getRandomlyAssignedModel(clauses);
+
+// Iterates until max_flips
         for (int i = 0; i < max_flips; i++){
 
+            // If all the clauses are satisfied, you have found a solution!
             if (areClausesSatisfied(model, clauses)) return model;
 
+            // Randomly selects a false clause
             Clause clause = randomlySelectFalseClause(clauses, model);
 
+            // With probability p, flip a random symbol from clause (to avoid local minima)
             if (p > rand.nextDouble()){
                 Symbol s = getRandomSymbolFromClause(clause);
                 flipSymbol(model, s);
+            // Otherwise flip the symbol that maximizes the number of satisfied clauses.
             }else{
                 flipSymbolToMaximizeSatisfiedClauses(clauses, clause, model);
             }
@@ -42,6 +51,7 @@ public class WalkSAT implements Solver {
         return null;
     }
 
+    // Assigns random boolean to each symbol from clauses
     private PLModel getRandomlyAssignedModel(Set<Clause> clauses){
         PLModel model = new PLModel();
 
@@ -56,6 +66,7 @@ public class WalkSAT implements Solver {
         return model;
     }
 
+    // Counts the number of satisfied clauses for each clause after each symbol in the randomClause is flipped
     private void flipSymbolToMaximizeSatisfiedClauses(Set<Clause> clauses, Clause randomClause, PLModel model){
         int bestIndex = -1;
         int maxSatisfiedClauses = -1;
@@ -69,21 +80,23 @@ public class WalkSAT implements Solver {
                 maxSatisfiedClauses = satisfiedClauses;
                 bestIndex = i;
             }
-
+            // Flips it back
             flipSymbol(model, s);
 
         }
 
+        // Flips the best one
         Symbol s = randomClause.get(bestIndex).getContent();
         flipSymbol(model, s);
 
 
     }
 
+    // Gets how many clauses are satisfied by the model
     private int satisfiedClausesCount(Set<Clause> clauses, PLModel model){
         int count = 0;
         for (Clause clause: clauses){
-            if (clause.isSatisfiedBy(model));{
+            if (clause.isSatisfiedBy(model)){
                 count++;
             }
         }
@@ -91,16 +104,19 @@ public class WalkSAT implements Solver {
         return count;
     }
 
+    // Flips the symbol in the model
     private void flipSymbol(PLModel model, Symbol s){
         Boolean value = model.get(s);
         model.set(s, !value);
     }
 
+    // Gets a random symbol from clause
     private Symbol getRandomSymbolFromClause(Clause clause){
         int randomIndex = rand.nextInt(clause.size());
         return clause.get(randomIndex).getContent();
     }
 
+    // Returns every false clause in an array list
     private ArrayList<Clause> getFalseClauses(Set<Clause> clauses, PLModel model){
         ArrayList<Clause> falseClauses = new ArrayList<>();
         for (Clause clause: clauses){
@@ -112,19 +128,18 @@ public class WalkSAT implements Solver {
         return falseClauses;
 
     }
+
+    // Uses the previous two methods
     private Clause randomlySelectFalseClause(Set<Clause> clauses, PLModel model){
         ArrayList<Clause> falseClauses = getFalseClauses(clauses, model);
         return falseClauses.get(rand.nextInt(falseClauses.size()));
 
     }
 
+    // Checks if all the clauses are satisfied.
     private boolean areClausesSatisfied(PLModel model, Set<Clause> clauses){
 
         for (Clause clause: clauses){
-//            model.dump();
-//            System.out.println(clause.toString());
-//            System.out.println(clause.isSatisfiedBy(model));
-//            System.out.println("*******");
             if (!clause.isSatisfiedBy(model)){
 
                 return false;

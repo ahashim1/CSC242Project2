@@ -128,6 +128,7 @@ public class MoreLiarsTruthersKB extends KB {
     }
 
     private static void solveLiarsTruthers() {
+        // Testing WalkSAT on each symbol
         MoreLiarsTruthersKB kb = new MoreLiarsTruthersKB();
         WalkSAT wSAT = new WalkSAT();
         Symbol amy = kb.intern("Amy");
@@ -144,27 +145,16 @@ public class MoreLiarsTruthersKB extends KB {
         Symbol lee = kb.intern("Lee");
 
         solveLTSymbol(amy, wSAT);
-
         solveLTSymbol(bob, wSAT);
-
         solveLTSymbol(cal, wSAT);
-
         solveLTSymbol(dee, wSAT);
-
         solveLTSymbol(eli, wSAT);
-
         solveLTSymbol(fay, wSAT);
-
         solveLTSymbol(gil, wSAT);
-
         solveLTSymbol(hal, wSAT);
-
         solveLTSymbol(ida, wSAT);
-
         solveLTSymbol(jay, wSAT);
-
         solveLTSymbol(kay, wSAT);
-
         solveLTSymbol(lee, wSAT);
     }
 

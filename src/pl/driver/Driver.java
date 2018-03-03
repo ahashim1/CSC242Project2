@@ -3,9 +3,12 @@ package pl.driver;
 import pl.examples.*;
 
 public class Driver {
+
+        // All the possible command line arguments
         final static String[] possibleArgs = {"ModusPonens", "WumpusWorld", "HornClauses", "LiarsTruthersA"
                 , "LiarsTruthersB", "MoreLiarsTruthers"};
 
+        // If no command line arguments, output all the results
         public static void main(String[] args) {
             if (args.length == 0){
                 for (String s: possibleArgs){
@@ -15,6 +18,7 @@ public class Driver {
                     System.out.println();
                 }
 
+                // Otherwise just print one problem
             }else if (args.length == 1) {
                 if (args[0].equals(possibleArgs[0])){
                     System.out.println("***** Modus Ponens Problem *****");
