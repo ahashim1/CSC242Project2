@@ -12,4 +12,19 @@ To run every problem, type the following command:
 
 java pl.driver.Driver
 
+These are the commands to run individual problems:
+
+java pl.driver.Driver ModusPonens
+
+java pl.driver.Driver WumpusWorld
+
+java pl.driver.Driver HornClauses
+
+java pl.driver.Driver LiarsTruthersA
+
+java pl.driver.Driver LiarsTruthersB
+
+java pl.driver.Driver MoreLiarsTruthers
+
+
 Who did what?
